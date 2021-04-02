@@ -6,8 +6,6 @@ export default function App() {
       <ComponentA />
       <ComponentA />
       <ComponentA />
-      <ComponentA />
-      <ComponentA />
     </div>
   );
 }
@@ -17,13 +15,16 @@ export default function App() {
  * @returns
  */
 function ComponentA() {
+  // LOGIC :: JS
+  let i = 100;
+  let str = "My Project";
+  let total = i + 100;
+
+  // UI
   return (
     <div>
       <div>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Laboriosam ipsum repudiandae vel, qui nihil ipsa commodi repellat
-        eaque tempora ducimus veniam cupiditate maxime! Ducimus accusantium
-        perspiciatis laboriosam aut quae neque!
+        Lorem ipsum dolor sit amet. {i} {str} {total}
       </div>
       <hr />
     </div>

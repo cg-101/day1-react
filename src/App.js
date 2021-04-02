@@ -9,6 +9,9 @@ export default function App() {
   );
 }
 
+
+
+
 function ComponentC() {
   // logic
   let list = ["DELHI", "MUMBAI", "CALCUTTA", "Chennai"];

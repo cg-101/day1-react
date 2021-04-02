@@ -4,8 +4,21 @@ export default function App() {
   return (
     <div>
       <ComponentA />
-      <ComponentA />
-      <ComponentB />
+      <ComponentC />
+    </div>
+  );
+}
+
+function ComponentC() {
+  // logic
+  let list = ["DELHI", "MUMBAI", "CALCUTTA", "Chennai"];
+
+  // UI
+  return (
+    <div>
+      {
+        list.map((data, index) => <h2 key={index}>{data}</h2> )
+      }
     </div>
   );
 }
@@ -30,8 +43,9 @@ function ComponentB() {
         return <div>BBBB</div>;
       })}
 
-      
-      {list.map(() => <div>DDD</div>)}  
+      {list.map(() => (
+        <div>DDD</div>
+      ))}
 
       {list.map(() => (
         <div>

@@ -2,17 +2,28 @@ import React, { useState } from "react";
 
 export default function App() {
   return (
-    <div>
-      <ComponentA />
+    <div className="container-fluid">
+      <NavigationComponent />
+      <MyPostBody />
     </div>
   );
 }
 
-function ComponentA() {
+function NavigationComponent() {
+  return <div className="row bg-dark" style={{ height: 55 }}></div>;
+}
+
+function MyPostBody() {
+  const [list, setList] = useState([1]);
+
+  const addNewBlock= () => {
+    setList([...list, 1])
+  }
+
   return (
-    <div>
-      <div className="bg-danger text-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam eum ipsam natus, mollitia unde, repellendus minus quaerat nostrum eos aliquam aliquid sunt facilis officia eveniet laudantium, ea adipisci distinctio quo.</div>
-      <button className="btn btn-warning">Click Me</button>
-    </div>
+    <>
+      <button className="btn btn-dark" onClick={addNewBlock}>Add</button>
+      {list.map((data) => <div className="row bg-secondary mt-1" style={{ height: 200 }}></div> )}
+    </>
   );
 }

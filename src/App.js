@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function App() {
   return (
@@ -9,17 +9,17 @@ export default function App() {
 }
 
 function ComponentA() {
-  let counter  = 100;
-
-  const myCounter = () => {
+  let [counter, setCounter] = useState(100);
+  
+  const icounter = () => {
     console.log(counter);
-    counter = counter + 1;
+    setCounter(counter + 1);
   }
   
   return (
     <div>
       <div>{counter}</div>
-      <button onClick={myCounter}>Update Counter</button>
+      <button onClick={icounter}>Update Counter</button>
     </div>
   );
 }

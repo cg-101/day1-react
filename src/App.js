@@ -4,78 +4,32 @@ export default function App() {
   return (
     <div>
       <ComponentA />
-      <ComponentC />
     </div>
   );
 }
 
-
-
-
-function ComponentC() {
-  // logic
-  let list = ["DELHI", "MUMBAI", "CALCUTTA", "Chennai"];
-
-  // UI
-  return (
-    <div>
-      {
-        list.map((data, index) => <h2 key={index}>{data}</h2> )
-      }
-    </div>
-  );
-}
-
-/**
- * <ComponentB />
- * @returns
- */
-function ComponentB() {
-  let i = 100;
-  let list = [1, 2, 3];
-
-  return (
-    <div>
-      <div>Lorem, ipsum. {i}</div>
-
-      {list.map(function () {
-        return <div>AAA</div>;
-      })}
-
-      {list.map(() => {
-        return <div>BBBB</div>;
-      })}
-
-      {list.map(() => (
-        <div>DDD</div>
-      ))}
-
-      {list.map(() => (
-        <div>
-          <div>CCC</div>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-/**
- * <ComponentA />
- * @returns
- */
 function ComponentA() {
-  // LOGIC :: JS
-  let i = 100;
-  let str = "My Project";
-  let total = i + 100;
+  // logic data, functions
+  let i=0;
+  let str = "my project";
+  let list = [1, 2, 3, 4];
 
-  // UI
+  let myFunction = function() {
+    console.log("I am clicked!!!", new Date());
+  }
+  
+  let myFunction1 = ()=> {
+    console.log("I am Arrow Function!!!", new Date());
+  }
+  
   return (
     <div>
-      <div>
-        Lorem ipsum dolor sit amet. {i} {str} {total}
-      </div>
-      <hr />
+      <div>Hello World</div>
+      <button onClick={myFunction}>Click Me 1</button>
+      <button onClick={() => myFunction()}>Click Me 2</button>
+
+      <button onClick={myFunction1}>Aroow Me 1</button>
+      <button onClick={() => myFunction1()}>Aroow Me 2</button>
     </div>
   );
 }
